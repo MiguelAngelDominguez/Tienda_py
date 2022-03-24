@@ -1,4 +1,5 @@
 import os
+import re
 
 MENU="""
     1.- ver todos los Productos
@@ -9,33 +10,29 @@ MENU="""
     6.- Salir
 """
 
-productos={
-    "cuaderno",
-    "lapiz",
-    "borrador",
-    "papelote"
-}
-
-precios=[
-    12,
-    23,
-    23,
-    13
-]
+productos=[]
 
 def pause_cls(): # pausa hasta tocar un tecla y borra toda lo que esta en consola
     os.system("pause")      # esto funciona si trabajas py en la terminal de windows
     os.system("cls")
 
+#terminar la funcion mañana
 def Ver_Productos():
-    if len(productos) == len(precios):
-        print("listas de productos y precios iguales :)\n\n")
-        print(f"productos -> {len(productos)}")
-        print(f"precios -> {len(precios)}")
-        pause_cls()
-    print("\tPRODC.\tPRECIO")
-    for produc,precio in zip(productos,precios): #obtenemos los valores en cada iteración de las listas
-        print(f"1.-\t{produc}\t{precio}")
+    a_productos=open('Productos_/producto_info.txt','r')
+    informacion_a_p=a_productos.read()
+    a_P=re.split(r'\n',informacion_a_p)
+    for i in a_P:
+        print(re.split(r',',i))
+        #productos.append(i)
+
+    # if len(productos) == len(precios):
+    #     print("listas de productos y precios iguales :)\n\n")
+    #     print(f"productos -> {len(productos)}")
+    #     print(f"precios -> {len(precios)}")
+    #     pause_cls()
+    # print("\tPRODC.\tPRECIO")
+    # for produc,precio in zip(productos,precios): #obtenemos los valores en cada iteración de las listas
+    #     print(f"1.-\t{produc}\t{precio}")
     pause_cls()
 
 

@@ -1,0 +1,4 @@
+cuaderno,12
+lapiz,15
+borrador,3
+papelote,19

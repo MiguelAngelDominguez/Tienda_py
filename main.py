@@ -1,13 +1,9 @@
-from ast import For
-from itertools import product
-
-
-products=[
+productos={
+    "cuaderno",
     "lapiz",
-    "lapicero",
     "borrador",
-    "tajador"
-]
+    "papelote"
+}
 
-for i in product:
-    print(i);
+for i in productos:
+    print(i)
